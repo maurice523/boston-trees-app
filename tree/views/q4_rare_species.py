@@ -10,7 +10,7 @@ def load_data():
 
 df = load_data()
 
-st.title("Q4 – Relationship Between Rarity and Tree Size")
+st.title("Relationship Between Rarity and Tree Size")
 
 st.write(
     "This page looks at the relationship between **how rare a species is** "

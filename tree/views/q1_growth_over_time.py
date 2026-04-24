@@ -28,7 +28,7 @@ def load_data():
 # Load the data for this page
 df = load_data()
 
-st.title("Q1 – Growth of Boston's Tree Canopy Over Time ")
+st.title("Growth of Boston's Tree Canopy Over Time ")
 st.subheader("According to Boston Parks and Recreation Department (BPRD)")
 
 st.write(

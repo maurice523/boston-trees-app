@@ -17,7 +17,7 @@ def load_data():
 # Load data for this page
 df = load_data()
 
-st.title("Q2 – Most Common Tree Species in a Neighborhood")
+st.title("Most Common Tree Species in a Neighborhood")
 
 st.write(
     "Choose a neighborhood. This page will show a pie chart and a table "

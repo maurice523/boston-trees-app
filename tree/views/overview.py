@@ -18,6 +18,8 @@ df = load_data()
 
 st.title("Overview of Boston Trees")
 
+st.write("This program is a User-Interactive dashboard to show how Trees in Boston have been planted in the last serveral years. Enjoy!")
+
 st.write(
     "This page shows a few charts to describe the tree data in Boston. "
     "The other pages will answer the four main questions of the project."

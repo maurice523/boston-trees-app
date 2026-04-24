@@ -11,7 +11,7 @@ def load_data():
 
 
 df = load_data()
-st.title("Q3 - Neighborhood")
+st.title("Neighborhood")
 st.write(
     "This page looks at tree size in each neighborhood. Tree size is measured "
     "using DBH (diameter at breast height, in inches). You can choose neighborhoods "
