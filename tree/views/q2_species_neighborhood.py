@@ -1,21 +1,12 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
+from views.data import load_trees
 
 # Parts between ################ were writen with the help of ChatGPT
 
 
-def load_data():
-    df = pd.read_csv("tree/views/bprd_trees(in).csv")
-
-    df["neighborhood"] = df["neighborhood"].fillna("Unknown")
-    df["spp_com"] = df["spp_com"].fillna("Unknown species")
-
-    return df
-
-
-# Load data for this page
-df = load_data()
+df = load_trees()
 
 st.title("Most Common Tree Species in a Neighborhood")
 

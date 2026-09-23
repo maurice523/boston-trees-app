@@ -1,0 +1,11 @@
+// Serves this folder as a static site on Cloudflare (no server, no build step).
+// The app itself runs in the visitor's browser via stlite.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "boston-trees",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./",
+    "not_found_handling": "single-page-application"
+  }
+}

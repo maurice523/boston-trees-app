@@ -1,14 +1,10 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
+from views.data import load_trees
 
 
-def load_data():
-    df = pd.read_csv("tree/views/bprd_trees(in).csv")
-    return df
-
-
-df = load_data()
+df = load_trees()
 
 st.title("Relationship Between Rarity and Tree Size")
 

@@ -1,20 +1,10 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
+from views.data import load_trees
 
 
-def load_data():
-    # Load the tree data from the CSV stored in the views folder
-    df = pd.read_csv("tree/views/bprd_trees(in).csv")
-
-    # Make sure DBH (tree diameter) is numeric
-    df["dbh"] = pd.to_numeric(df["dbh"], errors="coerce")
-
-    return df
-
-
-# Load the data for this page
-df = load_data()
+df = load_trees()
 
 st.title("Overview of Boston Trees")
 

@@ -1,0 +1,8 @@
+# Files that shouldn't be published with the site
+.git
+.gitignore
+.assetsignore
+wrangler.jsonc
+README.md
+requirements.txt
+tree/views/bprd_trees(in).csv

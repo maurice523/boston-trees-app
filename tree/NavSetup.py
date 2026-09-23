@@ -1,4 +1,11 @@
+import sys
+from pathlib import Path
+
 import streamlit as st
+
+# Let the page files import the shared loader (views/data.py) in both
+# "streamlit run" and the in-browser (stlite) build
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 # --- PAGE SETUP ---
 

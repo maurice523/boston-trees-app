@@ -2,31 +2,12 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pydeck as pdk
+from views.data import load_trees
 
 # Parts between ################ were writen with the help of ChatGPT
 
 
-def load_data():
-    df = pd.read_csv("tree/views/bprd_trees(in).csv")
-    list_valid = df["date_plant"].notna() & (df["date_plant"] != "--")
-    years = []
-    num = 0
-    for str_year in df["date_plant"]:
-        if list_valid[num]:
-            str_year = str_year.strip()
-            list_year = str_year.split(" ")
-            years.append(int(list_year[1]))
-        num += 1
-    df.loc[list_valid, "plant_year"] = years
-
-    ################
-    df["radius"] = df["dbh"].fillna(0) * 15.0 + 50.0
-    ################
-    return df
-
-
-# Load the data for this page
-df = load_data()
+df = load_trees()
 
 st.title("Growth of Boston's Tree Canopy Over Time ")
 st.subheader("According to Boston Parks and Recreation Department (BPRD)")
