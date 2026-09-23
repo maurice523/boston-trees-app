@@ -95,14 +95,17 @@
         'tree/views/q2_species_neighborhood.py',
         'tree/views/q3_average_size.py',
         'tree/views/q4_rare_species.py',
-        'tree/views/trees.csv',
+        'tree/views/trees.csv.gz',
       ]
 
       const entries = await Promise.all(
         files.map(async (path) => {
           const response = await fetch(path)
           if (!response.ok) throw new Error(`Could not load ${path}`)
-          return [path, await response.text()]
+          // The gzipped data is binary; the Python files are text
+          return path.endsWith('.gz')
+            ? [path, new Uint8Array(await response.arrayBuffer())]
+            : [path, await response.text()]
         }),
       )
 

@@ -11,7 +11,8 @@ import pandas as pd
 import streamlit as st
 
 # Next to this file, so it works no matter which folder the app is started from
-CSV_PATH = Path(__file__).with_name("trees.csv")
+# Gzipped so the browser downloads ~700 KB instead of 2.9 MB; pandas unzips it by extension
+CSV_PATH = Path(__file__).with_name("trees.csv.gz")
 
 
 @st.cache_data
